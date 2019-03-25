@@ -12,14 +12,17 @@ $ docker pull bitboom/rocksdb
 
 2. Run docker image (network and volume is options)
 ```sh
-$ docker run --rm -it --network=host -v ${HOST_SRC_DIR}:${DOCKER_SRC_DIR} bitboom/rocksdb /bin/bash
+$ docker run --rm -it bitboom/rocksdb /bin/bash
 ```
 ### Docker
-3. Test rocksdb & Build code using g++
+3-1. Build example codes
 ```sh
-$ cd /usr/src/rocksdb && make check
-$ g++ ${src}.cpp -std=c++11 -lrocksdb -lsnappy -lzstd \
-                            -llz4 -lbz2 -lz -pthread
+$ cd /usr/src/rocksdb/examples
+$ make all
+```
+3-2. Build simple code with g++
+```sh
+$ g++ ${src_file} -std=c++11 -lrocksdb -lsnappy -lzstd -llz4 -lbz2 -lz -pthread
 ```
 
 [1]:https://rocksdb.org/
