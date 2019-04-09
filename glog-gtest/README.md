@@ -1,8 +1,4 @@
 # Dockerize glog & gtest
-
-[GBS][1] is local build system for tizen platform developer.  
-Dockerize gbs for building tizen at docker.
-
 ### HOST
 1. Pull docker image from docker-hub
 ```sh
