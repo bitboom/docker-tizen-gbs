@@ -12,7 +12,8 @@ $ docker pull bitboom/tizen-gbs
 2. Download tizen-source-code at host PC.
 3. Run docker image by using volume.
 ```sh
-$ docker run --rm -it --net=host -v ${HOST_TIZEN_SOURCE_CODE_DIR}:/usr/src bitboom/tizen-gbs /bin/bash
+$ docker run --rm -it --net=host --privileged \
+             -v ${HOST_DIR}:/usr/src bitboom/tizen-gbs
 ```
 ### Docker
 4. Build tizen-source-code with GBS.
